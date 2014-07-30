@@ -56,6 +56,16 @@ namespace Newtonsoft.Json
         /// <summary>
         /// Include the .NET type name when the type of the object being serialized is not the same as its declared type.
         /// </summary>
-        Auto = 4
+        Auto = 4,
+
+        /// <summary>
+        /// Include primitive types.
+        /// </summary>
+        PrimitiveTypes = 8,
+
+        /// <summary>
+        /// Always include the .NET type name when serializing including primitive types
+        /// </summary>
+        AllInclPrimitiveTypes = All | PrimitiveTypes
     }
 }

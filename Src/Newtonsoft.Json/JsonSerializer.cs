@@ -127,7 +127,7 @@ namespace Newtonsoft.Json
             get { return _typeNameHandling; }
             set
             {
-                if (value < TypeNameHandling.None || value > TypeNameHandling.Auto)
+                if (value < TypeNameHandling.None || value > TypeNameHandling.AllInclPrimitiveTypes)
                     throw new ArgumentOutOfRangeException("value");
 
                 _typeNameHandling = value;

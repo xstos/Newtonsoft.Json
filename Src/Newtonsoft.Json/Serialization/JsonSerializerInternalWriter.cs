@@ -113,7 +113,7 @@ namespace Newtonsoft.Json.Serialization
 
         private void SerializePrimitive(JsonWriter writer, object value, JsonPrimitiveContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
         {
-            if (contract.TypeCode == PrimitiveTypeCode.Bytes)
+            if (contract.TypeCode == PrimitiveTypeCode.Bytes || (Serializer.TypeNameHandling == TypeNameHandling.AllInclPrimitiveTypes))
             {
                 // if type name handling is enabled then wrap the base64 byte string in an object with the type name
                 bool includeTypeDetails = ShouldWriteType(TypeNameHandling.Objects, contract, member, containerContract, containerProperty);
